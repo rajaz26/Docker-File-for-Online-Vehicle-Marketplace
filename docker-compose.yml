@@ -1,0 +1,16 @@
+version: '3'
+services:
+  server:
+    build:
+      context: .
+      dockerfile: Dockerfile.backend
+    ports:
+      - 8800:8800
+    depends_on:
+      - client
+  client:
+    build:
+      context: .
+      dockerfile: Dockerfile.frontend
+    ports:
+      - 3000:3000
